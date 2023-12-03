@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="css/style.css">
+        <title>WishList</title>
+    </head>
+    <body>
+        <script src="cordova.js"></script>
+        <script src="js/script.js"></script>
+		
+<h1>Wishlist</h1>
+<h3> For things that you wish to purchase that are not as important as your goals. <h3>
+    <form id="wishform">
+        <label for="wishName">WIsh Name:</label>
+        <input type="text" id="wishName" required><br>
+
+        <label for="wishAmount">Wish Amount:</label>
+        <input type="text" id="wishAmount" required pattern="^\d+(\.\d{1,2})?$"><br>
+
+        <label for="wishType">Type of Wish:</label>
+        <select id="wishType">
+            <option value="ClothingandSelfcare">Clothing and Selfcare</option>
+            <option value="Household">Household</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Activities">Activities</option>
+			<option value="Pets">Pets</option>
+        </select><br>
+
+        <label for="wishdueDate"> Wish Due Date:</label>
+        <input type="date" id="wishdueDate" required><br>
+
+        <label for="CurrentSavings">Current Savings:</label>
+        <input type="text" id="CurrentSavings" required pattern="^\d+(\.\d{1,2})?$"><br>
+
+        <label for="completionstatus">Completion Status:</label>
+        <select id="completionstatus">
+            <option value="no" selected>No</option>
+            <option value="yes">Yes</option>
+        </select><br>
+
+        <button type="button" onclick="saveWishlist()">Save Wishlist</button>
+    </form>
+	<br/>
+Click <a href=Viewwishlist.html>here</a> to view your wishlist.
+	<br/>
+	<button onclick="navigateToMain()">Back to Home</button>	
+    </body>
+</html>
